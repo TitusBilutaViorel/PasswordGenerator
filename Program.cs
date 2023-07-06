@@ -12,7 +12,6 @@ namespace PasswordGenerator
     internal class Program
     {
         private static System.Timers.Timer expTimer;
-        private static bool PassExp;
         static void Main(string[] args)
         {
 
@@ -58,7 +57,6 @@ namespace PasswordGenerator
                         {
                             GeneratePass();
                             expTimer.Start();
-                            PassExp = false;
                         }
                         else
                         {
@@ -87,7 +85,7 @@ namespace PasswordGenerator
 
         private static void PasswordExpired(object sender, ElapsedEventArgs e)
         {
-            PassExp = true;
+            
             Console.WriteLine("Password has expired.");
             Console.WriteLine("Press Enter key to generate another password.");
         }
